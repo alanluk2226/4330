@@ -1,0 +1,13 @@
+{
+  "train_seconds": 1181.960541700013,
+  "peak_gpu_gb": 5.283975124359131,
+  "steps": 1581,
+  "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "out_proj",
+    "fc1",
+    "fc2"
+  ]
+}

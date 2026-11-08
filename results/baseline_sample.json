@@ -1,0 +1,18 @@
+{
+  "model": "openai/whisper-small",
+  "adapter": null,
+  "language": "zh",
+  "task": "transcribe",
+  "sentences": 2,
+  "mer": 0.3829787234042553,
+  "examples": [
+    {
+      "reference": "\"周圍都有well-developed霧，嚴重limit我哋嘅visibility，開車嘅時候要小心啲！\"",
+      "hypothesis": "周圍都有well developed mode嚴重limit我們的visibility開車時要小心一點"
+    },
+    {
+      "reference": "\"我個人好like去金鐘嘅food court，因為嗰度嘅選擇好wide，應有盡有。\"",
+      "hypothesis": "我個人很喜歡去金鐘的Foodcock因為那裡的選擇很大,應有盡有"
+    }
+  ]
+}

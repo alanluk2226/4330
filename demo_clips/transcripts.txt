@@ -1,0 +1,26 @@
+Prompt: 天氣 霧 颱風 能見度 食物 交通 購物 學習 電影
+
+[1] demo_clips\1.wav
+Reference: "周圍都有well-developed霧，嚴重limit我哋嘅visibility，開車嘅時候要小心啲！"
+Baseline:  周圍都有well developed mode嚴重limit我們的visibility開車時要小心一點
+LoRA:      '周圍都有well-developed 霧，嚴重limit我哋嘅visibility，開車嘅時候要小心啲.'
+
+[2] demo_clips\2.wav
+Reference: "我個人好like去金鐘嘅food court，因為嗰度嘅選擇好wide，應有盡有。"
+Baseline:  我個人很喜歡去金鐘的Foodcock因為那裡的選擇很大,應有盡有
+LoRA:      '我個人好like去金鐘嘅food court，因為嗰度嘅選擇好wide，應有盡有。'
+
+[3] demo_clips\3.wav
+Reference: "如果你想去食最authentic嘅港式燒臘，我會推薦你去中環嗰間燒鵝店，太best了!"
+Baseline:  如果你想去吃著 authentic 的港式燒腩我會推薦你去中華人那間燒餓店太Best料
+LoRA:      '如果你想去食咗authentic嘅港式燒辣，我會推薦你去中環嗰間燒鵝店，太best了！'
+
+[4] demo_clips\4.wav
+Reference: "我個weekend去睇咗'The Avengers'嘅movie，電影咁intense，真係我今年睇過最好嘅show。"
+Baseline:  我個weekend去睇咗The Avengers 嘅movie電影咁intense真係我今年睇過最好嘅show
+LoRA:      '我個weekend去睇咗the Avengers嘅movie，電影咁intense，真係我今年睇過最好嘅show.'
+
+[5] demo_clips\5.wav
+Reference: "我見到新聞嘅headline話廣告牌嘅管理問題，我覺得呢個problem要迅速咁解決，避免任何potential hazards。"
+Baseline:  我見到新聞的Headline 和廣告牌的管理問題我覺得這個問題要上速解決,地面任何potential hazards
+LoRA:      '我見到新聞嘅headline話廣告牌嘅管理問題，我覺得呢個problem要上速咁解決，地面任何potential hazards.'

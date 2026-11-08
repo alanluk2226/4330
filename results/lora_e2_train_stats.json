@@ -1,0 +1,7 @@
+{
+  "train_seconds": 696.9118341999128,
+  "peak_gpu_gb": 3.848440647125244,
+  "steps": 1581,
+  "base_adapter": "outputs/lora",
+  "learning_rate": 2e-05
+}

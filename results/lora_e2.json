@@ -1,0 +1,91 @@
+{
+  "model": "openai/whisper-small",
+  "adapter": "outputs/lora_e2",
+  "language": "zh",
+  "task": "transcribe",
+  "sentences": 1405,
+  "mer": 0.1911010313731843,
+  "baseline_mer": 0.4571521140450348,
+  "examples": [
+    {
+      "reference": "\"周圍都有well-developed霧，嚴重limit我哋嘅visibility，開車嘅時候要小心啲！\"",
+      "hypothesis": "'周圍都有well-developed mode，嚴重limit我哋嘅visibility，開車嘅時候要小心啲。'"
+    },
+    {
+      "reference": "\"我個人好like去金鐘嘅food court，因為嗰度嘅選擇好wide，應有盡有。\"",
+      "hypothesis": "'我個人好like去金鐘嘅food court，因為嗰度嘅選擇好wide，應有盡有。'"
+    },
+    {
+      "reference": "\"如果你想去食最authentic嘅港式燒臘，我會推薦你去中環嗰間燒鵝店，太best了!\"",
+      "hypothesis": "'如果你想去食咗authentic嘅港式燒腩，我會推薦你去中環嗰間燒鵝店，太best了！'"
+    },
+    {
+      "reference": "\"我個weekend去睇咗'The Avengers'嘅movie，電影咁intense，真係我今年睇過最好嘅show。\"",
+      "hypothesis": "'我個weekend去睇咗the Avengers嘅movie，電影咁intense，真係我今年睇過最好嘅show.'"
+    },
+    {
+      "reference": "\"我見到新聞嘅headline話廣告牌嘅管理問題，我覺得呢個problem要迅速咁解決，避免任何potential hazards。\"",
+      "hypothesis": "'我見到新聞嘅headline話廣告牌嘅管理問題，我覺得呢個problem要上速咁解決，避免任何potential hazards.'"
+    },
+    {
+      "reference": "\"我喺online shopping買home decor items，可以自己裝飾屋企，又可以show my personal style，真係creative同埋fun。\"",
+      "hypothesis": "'我喺online shopping買home decor items，可以自己裝飾ok，又可以show my personal style，真係creative同埋fun.'"
+    },
+    {
+      "reference": "\"學習一種新嘅language可以open up新嘅opportunities，我現在正在學西班牙文， 真係有趣。\"",
+      "hypothesis": "'學習一種新嘅language，可以open up新嘅opportunities，我現在正在學新的牙文，真係有趣。'"
+    },
+    {
+      "reference": "\"學會咗新嘅skill，例如programming，為我嘅career開啓新嘅doors。\"",
+      "hypothesis": "'學會咗新嘅skill例如programming，為我嘅career開啟新嘅doors。'"
+    },
+    {
+      "reference": "\"學習係一個never-ending journey，我相信學無止境，喺呢個ever-changing世界要保持curiosity以學到新嘅知識。\"",
+      "hypothesis": "'學習係一個never-ending journey，我相信學無止境，你係呢個ever-changing世界，要保持curiosity，以學到新嘅知識。'"
+    },
+    {
+      "reference": "\"我每天都set咗一個to-do list，咁樣我先可以manage我嘅時間，做到最efficient嘅工作。\"",
+      "hypothesis": "'我每日都set做一個to-do list，咁樣我先可以manage到我嘅時間，做到最efficient嘅工作。'"
+    },
+    {
+      "reference": "\"小籠包裏面嘅肉汁好juicy，每次一咬就會流出嚟，簡直係mouthwatering！\"",
+      "hypothesis": "'小籠包裡面嘅肉汁好juicy，每次一咬就會流出嚟，簡直係mouthwatering.'"
+    },
+    {
+      "reference": "\"我下個月要去參加yoga class，一直都想體驗下，希望我可以fit入去。\"",
+      "hypothesis": "'我下個月要去chamber yoga class，一直都想體驗喇，希望我可以fit入去。'"
+    },
+    {
+      "reference": "\"我覺得做運動唔單止keep fit，佢對於精神上都有好大嘅help。\"",
+      "hypothesis": "'我覺得做運動唔單止keep fit，佢對於精神上都有好大嘅help。'"
+    },
+    {
+      "reference": "\"當學習變成一個habit，我哋就會更加enjoy學習嘅journey，無論係學習啲咩硬skills或者是soft skills。\"",
+      "hypothesis": "'當學習變成一個habit，我哋就會更有enjoy學習嘅journey，無論係學習啲咩硬skills或者係soft skills。'"
+    },
+    {
+      "reference": "\"我睇吓weather report，話聽日會有big storm，要小心啲喎。\"",
+      "hypothesis": "'我聽下weather reports話，明日會有big storm，要小心啲喎。'"
+    },
+    {
+      "reference": "\"政府分配資源嘅fairness受到質疑，好多人認為佢偏愛大企業，我哋需要一個公平的distribution system。\"",
+      "hypothesis": "'政府分配資源嘅fans受到責任，好多人認為佢偏愛大企業，我哋需要一個公平嘅distribution system.'"
+    },
+    {
+      "reference": "\"我此刻正在做preparation去迎接今年嘅summer sales，預計會買好多新衫同鞋，好期待同埋fun。\"",
+      "hypothesis": "'我設計正在做preparation去迎接今年嘅summer sales，預計會買好多新衣服和行好期待同埋fun.'"
+    },
+    {
+      "reference": "\"學習嘅journey並唔係一蹴可幾，而係需要持續嘅effort和patience。\"",
+      "hypothesis": "'學習嘅journey並唔係一咗可己，而係需要持續嘅efforts同patience。'"
+    },
+    {
+      "reference": "\"喺學習既過程中，要開始Develop critical thinking skills，可以幫助think outside the box。\"",
+      "hypothesis": "'看學習的過程中，要開始develop critical thinking skills，可以幫助think outside the box。'"
+    },
+    {
+      "reference": "\"我打機時間都用嚟玩online game，連接實世界嘅朋友，可以一齊玩得開心過吓添。\"",
+      "hypothesis": "'我但係時間都用嚟畫online game，連接世界嘅朋友可以一齊玩得開心嘅話，"
+    }
+  ]
+}
