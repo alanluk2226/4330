@@ -1,0 +1,6 @@
+{
+  "sentences": 1215,
+  "dropped_simplified": 190,
+  "lora_mer": 0.15895071344008974,
+  "note": "Same saved LoRA drafts. Sentences with simplified characters in the reference were removed from the score."
+}
