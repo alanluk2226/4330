@@ -1,0 +1,10 @@
+{
+  "model": "gemini-3.5-flash",
+  "calls": 20,
+  "sentences_per_call": 15,
+  "sentences_completed": 30,
+  "sentences_requested": 300,
+  "complete": false,
+  "lora_mer": 0.17064439140811455,
+  "gemini_mer": 0.1515513126491647
+}

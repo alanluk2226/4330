@@ -1,3 +1,5 @@
+bitsandbytes
+google-genai
 transformers>=5.22
 peft>=0.21
 soundfile

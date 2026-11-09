@@ -1,0 +1,9 @@
+100%|██████████| 1405/1405 [34:50<00:00,  1.49s/it]
+Baseline MER = 45.72%
+LoRA MER     = 17.62%
+Qwen MER     = 19.82%
+Saved C:\Users\user\Desktop\4330\results\lora_qwen.json
+
+exit_code: 0
+elapsed_ms: 2162707
+ended_at: 2026-11-09T07:05:22.138Z

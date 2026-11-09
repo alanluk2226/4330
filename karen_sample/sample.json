@@ -1,0 +1,69 @@
+{
+  "dataset": "kakiso/KarenSo_CantoneseRecordings",
+  "seed": 42,
+  "rows": [
+    40,
+    7,
+    1,
+    47,
+    17
+  ],
+  "sentences": 5,
+  "prompt": "天氣 霧 颱風 能見度 食物 交通 購物 學習 電影",
+  "baseline_mer": 0.4084507042253521,
+  "lora_mer": 0.15492957746478872,
+  "gemini_mer": 0.1267605633802817,
+  "examples": [
+    {
+      "row": 40,
+      "reference": "你唔自首嘅話唔好怪我大義滅親啊。",
+      "romanization": "nei5 m4 zi6 sau2 ge3 waa2 m4 hou2 gwaai3 ngo5 daai6 ji6 mit6 can1 aa3.",
+      "baseline": "你不自首的話,不要怪我大意滅親呀!",
+      "lora": "'你唔自首嘅話，唔好怪我大意滅親呀？'",
+      "gemini_model": "gemini-3.5-flash",
+      "gemini": "你唔自首嘅話，唔好怪我大義滅親呀？",
+      "clip": "karen_sample\\1.wav"
+    },
+    {
+      "row": 7,
+      "reference": "大家都要諗下點樣可以有健康嘅生活。",
+      "romanization": "daai6 gaa1 dou1 jiu3 nam2 haa6 dim2 joeng2 ho2 ji5 jau5 gin6 hong1 ge3 sang1 wut6.",
+      "baseline": "大家都要想想怎樣才可以有健康的生活",
+      "lora": "'大家都要諗下點樣先可以有健康嘅生活？'",
+      "gemini_model": "gemini-3.5-flash",
+      "gemini": "大家都要諗下點樣先可以有健康嘅生活？",
+      "clip": "karen_sample\\2.wav"
+    },
+    {
+      "row": 1,
+      "reference": "早茶時間唔係太多人，唔洗訂枱㗎。",
+      "romanization": "zou2 caa4 si4 gaan3 m4 hai6 taai3 do1 jan4 m4 sai2 deng6 toi2 gaa3.",
+      "baseline": "早刷時間不是太多人不用訂桌的",
+      "lora": "'早餐時間唔係太多人，唔使訂桌架！'",
+      "gemini_model": "gemini-3.5-flash",
+      "gemini": "早餐時間唔係太多人，唔使訂座架！",
+      "clip": "karen_sample\\3.wav"
+    },
+    {
+      "row": 47,
+      "reference": "今時今日噉嘅服務態度係唔夠㗎。",
+      "romanization": "gam1 si4 gam1 jat6 gam2 ge3 fuk6 mou6 taai3 dou6 hai6 m4 gau3 gaa3.",
+      "baseline": "今時今日這樣的服務態度是不足的",
+      "lora": "'今時今日，咁嘅服務態度係唔夠㗎，",
+      "gemini_model": "gemini-3.5-flash",
+      "gemini": "今時今日，咁嘅服務態度係唔夠㗎。",
+      "clip": "karen_sample\\4.wav"
+    },
+    {
+      "row": 17,
+      "reference": "噉你哋會唔會慶祝聖誕節啊？",
+      "romanization": "gam2 lei5 dei6 wui5 m4 wui5 hing3 zuk1 sing3 daan3 zit3 aa3?",
+      "baseline": "你們會不會慶祝聖誕節呀?",
+      "lora": "'咁你地會唔會慶祝聖誕節呀？",
+      "gemini_model": "gemini-3.5-flash",
+      "gemini": "咁你哋會唔會慶祝聖誕節呀？",
+      "clip": "karen_sample\\5.wav"
+    }
+  ],
+  "note": "Five-sentence sample only. Not comparable to the MCE 1405-sentence MER."
+}
