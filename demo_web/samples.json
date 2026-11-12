@@ -1,0 +1,54 @@
+[
+  {
+    "index": 290,
+    "title": "Taj Mahal",
+    "audio": "audio/290.wav",
+    "note": "Whisper writes 湯爾哈 and Gordres. LoRA writes Tarmahar. DeepSeek restores Taj Mahal.",
+    "reference": "\"India嘅Taj Mahal喺sunrise嘅時候真係gorgeous，像係親自睇到一幅live painting一樣。\"",
+    "whisper": "在新泰国的汤尔哈在新泰国时,真是Gordres像在亲自看到一幅Live Painting一样",
+    "lora": "'India嘅Tarmahar喺Sunrise嘅時候，真係gorgeous，像喺親自睇到一幅live painting一樣！'",
+    "deepseek": "India嘅Taj Mahal喺Sunrise嘅時候，真係gorgeous，像喺親自睇到一幅live painting一樣！"
+  },
+  {
+    "index": 278,
+    "title": "Animal Crossing",
+    "audio": "audio/278.wav",
+    "note": "Whisper turns the sentence into written Chinese. LoRA keeps the colloquial wording and writes creatively. DeepSeek changes that word to creativity.",
+    "reference": "\"我最鐘意嘅個game就係'Animal Crossing'，佢嘅gameplay真係好relaxing，又可以improve creativity！\"",
+    "whisper": "我最喜歡的遊戲就是Animal Crossing它的遊戲就是很放鬆,可以改變它",
+    "lora": "'我最鍾意嘅game就係animal crossing，佢嘅gameplay真係好relaxing，又可以improve creatively.'",
+    "deepseek": "我最鍾意嘅game就係animal crossing，佢嘅gameplay真係好relaxing，又可以improve creativity."
+  },
+  {
+    "index": 926,
+    "title": "Cyber security",
+    "audio": "audio/926.wav",
+    "note": "Whisper writes Siber Security and Cyber Thrust. LoRA keeps 嘅 and Cyber threats, and still writes 非速. DeepSeek changes 非速 to 急速. The reference says 飛速.",
+    "reference": "\"最新嘅cyber security報告顯示，global cyber attacks嘅數量喺過去嘅五年內飛速增加，專家呼籲企業要提升自家嘅security standards去對抗cyber threats。",
+    "whisper": "最新的Siber Security 報告顯示,Global Cyber Attacks 數量在過去5年內,非速增加專家呼籲企業要提升自家的Security Standards 去對抗 Cyber Thrust。",
+    "lora": "'最新嘅Cyber Security報告顯示，Global Cyber Attacks嘅數量喺過去五年內，非速增加專家呼籲企業，要提升自家嘅security standards去對抗Cyber threats.'",
+    "deepseek": "最新嘅Cyber Security報告顯示，Global Cyber Attacks嘅數量喺過去五年內，急速增加，專家呼籲企業，要提升自家嘅security standards去對抗Cyber threats."
+  },
+  {
+    "index": 131,
+    "title": "Venice",
+    "audio": "audio/131.wav",
+    "fourthLabel": "DeepSeek",
+    "note": "Whisper writes Rainless and Goldenlub. LoRA writes Rainless and Golden Lab. DeepSeek restores Venice and gondola.",
+    "reference": "\"喺Italy嘅Venice, 坐gondola嘅時候會有一種unforgettable嘅romantic experience！\"",
+    "whisper": "在Italy的Rainless坐Goldenlub的時候會有一種unforgettable的Rimetic experience。",
+    "lora": "'喺Italy嘅Rainless，坐Golden Lab嘅時候，會有一種unforgettable嘅rematic experience.'",
+    "deepseek": "喺Italy嘅Venice，坐gondola嘅時候，會有一種unforgettable嘅romantic experience."
+  },
+  {
+    "index": "dayi",
+    "title": "大義滅親",
+    "audio": "audio/dayi.wav",
+    "fourthLabel": "DeepSeek",
+    "note": "This clip is from the five-sentence sample, not the 1,215-sentence test. Whisper writes 大意滅親 in written Chinese. LoRA keeps the colloquial wording but still writes 大意滅親. DeepSeek restores 大義滅親.",
+    "reference": "你唔自首嘅話唔好怪我大義滅親啊。",
+    "whisper": "你不自首的話,不要怪我大意滅親呀!",
+    "lora": "'你唔自首嘅話，唔好怪我大意滅親呀？'",
+    "deepseek": "'你唔自首嘅話，唔好怪我大義滅親呀？'"
+  }
+]

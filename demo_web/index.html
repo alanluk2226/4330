@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cantonese-English demo</title>
+  <style>
+    :root {
+      --ink: #1c1915;
+      --muted: #5c564c;
+      --line: #ddd6c8;
+      --paper: #f3efe6;
+      --card: #fffdf8;
+      --accent: #8c3a22;
+      --accent-soft: #f3e4dc;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Segoe UI", "Microsoft JhengHei", sans-serif;
+    }
+
+    main {
+      width: min(1120px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 32px 0 48px;
+    }
+
+    header p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 32px;
+      font-weight: 650;
+      letter-spacing: -0.03em;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 28px;
+      margin-top: 28px;
+      align-items: start;
+    }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+    }
+
+    .clips {
+      display: grid;
+      gap: 8px;
+    }
+
+    .clips button {
+      width: 100%;
+      text-align: left;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--ink);
+      border-radius: 10px;
+      padding: 12px 14px;
+      font: inherit;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .clips button[aria-pressed="true"] {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fffdf8;
+    }
+
+    .clips button:focus-visible,
+    #transcribe:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .player {
+      margin-top: 18px;
+    }
+
+    #transcribe {
+      width: 100%;
+      border: 0;
+      border-radius: 999px;
+      background: var(--ink);
+      color: #fffdf8;
+      font: inherit;
+      font-size: 18px;
+      font-weight: 650;
+      padding: 14px 16px;
+      cursor: pointer;
+    }
+
+    #transcribe:disabled {
+      opacity: 0.55;
+      cursor: default;
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 12px;
+    }
+
+    .note {
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .transcripts {
+      display: grid;
+      gap: 12px;
+    }
+
+    article {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px 18px 18px;
+    }
+
+    article.lora {
+      border-color: #e4c7bc;
+      background: linear-gradient(180deg, var(--accent-soft), var(--card) 42px);
+    }
+
+    .label {
+      margin: 0;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .text {
+      margin: 8px 0 0;
+      min-height: 1.55em;
+      font-size: 22px;
+      line-height: 1.55;
+    }
+
+    .text.pending {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    article.show {
+      animation: rise 0.35s ease;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    @media (max-width: 800px) {
+      main { width: min(100% - 28px, 1120px); }
+      .layout { grid-template-columns: 1fr; }
+      .text { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Cantonese-English demo</h1>
+      <p>The reference stays on screen. Press Transcribe, and the other lines appear after the clip finishes.</p>
+    </header>
+    <div class="layout">
+      <section class="panel" aria-label="Audio">
+        <div class="clips" id="clips" role="group" aria-label="Choose a clip"></div>
+        <div class="player">
+          <button id="transcribe" type="button">Transcribe</button>
+          <audio id="player" controls preload="metadata"></audio>
+          <p class="note" id="note"></p>
+        </div>
+      </section>
+      <section class="transcripts" aria-label="Transcripts">
+        <article>
+          <p class="label">Reference</p>
+          <p class="text" id="reference"></p>
+        </article>
+        <article>
+          <p class="label">Original Whisper</p>
+          <p class="text" id="whisper"></p>
+        </article>
+        <article class="lora">
+          <p class="label">LoRA</p>
+          <p class="text" id="lora"></p>
+        </article>
+        <article>
+          <p class="label" id="fourth-label">DeepSeek</p>
+          <p class="text" id="deepseek"></p>
+        </article>
+      </section>
+    </div>
+  </main>
+  <script>
+    const fields = ["whisper", "lora", "deepseek"];
+    const clips = document.querySelector("#clips");
+    const player = document.querySelector("#player");
+    const transcribe = document.querySelector("#transcribe");
+    const note = document.querySelector("#note");
+    let samples = [];
+    let current = 0;
+    let run = 0;
+    let timers = [];
+
+    function show(text) {
+      let value = text.trim();
+      if (value.startsWith('"') || value.startsWith("'")) value = value.slice(1);
+      if (value.endsWith('"') || value.endsWith("'")) value = value.slice(0, -1);
+      return value.trim();
+    }
+
+    function clearTimers() {
+      for (const id of timers) clearTimeout(id);
+      timers = [];
+    }
+
+    function resetText() {
+      run += 1;
+      clearTimers();
+      const sample = samples[current];
+      note.textContent = "The other lines appear after this clip finishes.";
+      document.querySelector("#reference").textContent = show(sample.reference);
+      document.querySelector("#fourth-label").textContent = sample.fourthLabel || "DeepSeek";
+      for (const field of fields) {
+        const line = document.querySelector("#" + field);
+        line.textContent = "Waiting";
+        line.classList.add("pending");
+        line.parentElement.classList.remove("show");
+      }
+      transcribe.disabled = false;
+      transcribe.textContent = "Transcribe";
+    }
+
+    function reveal(token) {
+      const sample = samples[current];
+      fields.forEach((field, index) => {
+        timers.push(setTimeout(() => {
+          if (token !== run) return;
+          const line = document.querySelector("#" + field);
+          line.textContent = show(sample[field]);
+          line.classList.remove("pending");
+          line.parentElement.classList.remove("show");
+          void line.parentElement.offsetWidth;
+          line.parentElement.classList.add("show");
+        }, 450 * index));
+      });
+      timers.push(setTimeout(() => {
+        if (token !== run) return;
+        note.textContent = sample.note;
+        transcribe.disabled = false;
+        transcribe.textContent = "Transcribe again";
+      }, 450 * fields.length));
+    }
+
+    function render(index) {
+      current = index;
+      player.pause();
+      player.src = samples[index].audio;
+      resetText();
+      for (const button of clips.querySelectorAll("button")) {
+        button.setAttribute("aria-pressed", button.dataset.index === String(index));
+      }
+    }
+
+    function startTranscription() {
+      resetText();
+      const token = run;
+      transcribe.disabled = true;
+      transcribe.textContent = "Listening…";
+      note.textContent = "Listening…";
+      player.currentTime = 0;
+      player.onended = () => {
+        if (token !== run) return;
+        reveal(token);
+      };
+      player.play().catch(() => {
+        transcribe.disabled = false;
+        transcribe.textContent = "Transcribe";
+        note.textContent = "Press Transcribe to play this clip.";
+      });
+    }
+
+    transcribe.addEventListener("click", startTranscription);
+
+    fetch("samples.json")
+      .then((response) => response.json())
+      .then((data) => {
+        samples = data;
+        data.forEach((sample, index) => {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.dataset.index = String(index);
+          button.textContent = sample.title;
+          button.addEventListener("click", () => render(index));
+          clips.appendChild(button);
+        });
+        render(0);
+      });
+  </script>
+</body>
+</html>
