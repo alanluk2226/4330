@@ -33,6 +33,18 @@ python show_random5.py --seed 42
 
 ![Sentence 290](docs/figures/example-290.png)
 
+## Demo
+
+Five saved clips are on [quick-lyra-lt9n889.tmp.now](https://quick-lyra-lt9n889.tmp.now). The reference stays on screen. Press Transcribe and the other lines appear after the clip finishes. The page does not transcribe live.
+
+The same page can be opened locally:
+
+```powershell
+.\.venv\Scripts\python.exe demo_web\serve.py
+```
+
+Then open `http://127.0.0.1:8765`.
+
 ## Layout
 
 - `eval_baseline.py` scores the original model.
